@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArctIQ — Edge AI Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="circuit"></canvas>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">ARCT<em>IQ</em></a>
+  <div class="nav-right">
+    <a href="#services">Services</a>
+    <a href="#who">Who We Help</a>
+    <a href="blog.html">Blog</a>
+    <a class="nav-cta" href="#contact">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page">
+  <div class="hero">
+    <div class="eyebrow">Edge AI · NVIDIA Jetson</div>
+
+    <h1>
+      AI that runs<br>
+      <span class="line-dim">where your</span><br>
+      <span class="line-green">data lives.</span>
+    </h1>
+
+    <p class="hero-body">
+      ArctIQ helps <strong>manufacturers, universities, and deep-tech teams</strong> deploy
+      real-time AI directly on edge hardware — no cloud, no recurring compute costs,
+      no latency. We specialise in NVIDIA Jetson and compressed model deployment.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn-fill" href="#contact">Discuss your project</a>
+      <a class="btn-ghost" href="#services">See what we do</a>
+    </div>
+
+    <div class="hero-tags">
+      <span class="tag">NVIDIA Jetson</span>
+      <span class="tag">TensorRT</span>
+      <span class="tag">Model Quantization</span>
+      <span class="tag">Vision Systems</span>
+      <span class="tag">On-Device LLMs</span>
+      <span class="tag">Real-Time Inference</span>
+    </div>
+  </div>
+</div>
+
+<!-- NUMBERS BAND -->
+<div class="band">
+  <div class="band-inner">
+    <div class="band-item">
+      <div class="band-num g">2+</div>
+      <div class="band-label">Years hands-on with NVIDIA Jetson — Nano, Orin, AGX and everything between.</div>
+    </div>
+    <div class="band-item">
+      <div class="band-num b">0ms</div>
+      <div class="band-label">Cloud round-trip latency when AI runs directly on your device, on your site.</div>
+    </div>
+    <div class="band-item">
+      <div class="band-num g">₹0</div>
+      <div class="band-label">Per-inference cloud cost after deployment — you own the hardware, you own the model.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="page">
+  <div class="section" id="services">
+    <div class="section-tag">What We Do</div>
+    <h2>From model to<br>production deployment.</h2>
+    <p class="section-sub">
+      We handle the full stack — compressing a model to fit your hardware,
+      then building the inference pipeline that keeps it running reliably in the field.
+    </p>
+
+    <div class="card-grid">
+    <div class="card">
+        <div class="card-icon">01 — Optimisation</div>
+        <h3>Model Compression & Optimisation</h3>
+        <p>
+        We take your existing model — vision, language, or multimodal — and make it edge-ready using quantization, pruning, and TensorRT acceleration.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">02 — Deployment</div>
+        <h3>Edge Deployment on NVIDIA Jetson</h3>
+        <p>
+        End-to-end deployment on Jetson Orin, AGX, and Nano. We build inference pipelines that handle live input streams, model execution, and output — tuned for your specific hardware configuration.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">03 — Inference Systems</div>
+        <h3>Real-Time Inference Pipelines</h3>
+        <p>
+        We design and build pipelines for real-time data processing — handling streams, batching, and execution efficiently on constrained hardware.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">04 — Advisory</div>
+        <h3>Technical Consulting & Architecture</h3>
+        <p>
+        Not sure which Jetson module fits your use case, or whether your model can run at the edge? We help teams make the right technical decisions before they spend on hardware.
+        </p>
+    </div>
+    </div>
+
+  <!-- WHO WE HELP -->
+  <div class="section" id="who">
+    <div class="section-tag">Who We Help</div>
+    <h2>Built for teams who<br>build real things.</h2>
+    <p class="section-sub">
+      ArctIQ works with organisations that need AI to function in the physical world —
+      not just in a browser or a demo.
+    </p>
+
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-label">Industry</div>
+        <h3>Manufacturing & Quality Control</h3>
+        <p>Factories running visual inspection, defect detection, or predictive maintenance. We deploy on-site, tune for your line speed, and leave you with a working, documented system.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-label">Academia</div>
+        <h3>Universities & Research Labs</h3>
+        <p>Research teams with Jetson kits that need help getting a model to actually run. Lab setup, deployment workshops, and custom implementations for your specific research goals.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-label">Deep Tech</div>
+        <h3>Hardware Startups & Product Teams</h3>
+        <p>Teams building drones, robots, or smart cameras that need embedded AI. Your team builds the product — we make sure the AI stack runs efficiently on the hardware inside it.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-label">Security</div>
+        <h3>Smart Surveillance & Analytics</h3>
+        <p>Surveillance companies wanting intelligent analytics — crowd detection, intrusion alerts, footfall counting — without sending footage to the cloud. We build the on-device intelligence layer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="section">
+    <div class="section-tag">Process</div>
+    <h2>How an engagement<br>typically works.</h2>
+    <p class="section-sub">
+      Most projects go from first call to working deployment in 4–8 weeks.
+      No long procurement cycles.
+    </p>
+
+    <div class="process-list">
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <div class="process-body">
+          <h3>Discovery Call</h3>
+          <p>We understand your problem, your hardware situation, and what a successful deployment looks like. Free, no commitment. Usually 30–45 minutes.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <div class="process-body">
+          <h3>Technical Assessment</h3>
+          <p>We evaluate your model, your data, and your hardware constraints. We'll tell you honestly what's achievable and what the effort looks like — before any money changes hands.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <div class="process-body">
+          <h3>Proof of Concept</h3>
+          <p>A working demo on your actual hardware. Fixed-price, time-boxed. You see it running before committing to a full engagement.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">04</div>
+        <div class="process-body">
+          <h3>Production Deployment</h3>
+          <p>Full implementation, on-site testing, documentation, and handover. We don't disappear after delivery — we make sure it actually works in your environment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="section-tag">Contact</div>
+      <h2>Let's talk about<br>your deployment.</h2>
+      <p>
+        Whether you have a model ready to deploy or you're still figuring out
+        if edge AI is right for your use case — reach out. We'll give you a straight answer.
+      </p>
+      <div class="contact-detail">
+        <div class="contact-row">
+          <span class="contact-row-label">Based in</span>
+          <span class="contact-row-val">India</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-label">Serves</span>
+          <span class="contact-row-val">India-wide, Remote globally</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-label">Email</span>
+          <span class="contact-row-val"><a href="mailto:hello@ArctIQ.co.in">hello@ArctIQ.co.in</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <form class="form" onsubmit="handleSubmit(event)">
+        <div class="form-field">
+          <label>Your name</label>
+          <input type="text" placeholder="Name" required>
+        </div>
+        <div class="form-field">
+          <label>Organisation</label>
+          <input type="text" placeholder="Organisation Name">
+        </div>
+        <div class="form-field">
+          <label>I am a...</label>
+          <select>
+            <option value="">Select your context</option>
+            <option>Manufacturer / Factory</option>
+            <option>University / Research Lab</option>
+            <option>Hardware Startup</option>
+            <option>Surveillance / Security Company</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>What are you trying to build?</label>
+          <textarea placeholder="Describe your use case. What problem you're solving, what hardware you have, and where you are in the process."></textarea>
+        </div>
+        <button type="submit" class="btn-fill">Send message →</button>
+        <div id="form-msg" style="font-family:var(--mono);font-size:0.73rem;color:var(--green);display:none;letter-spacing:0.05em;">
+          Message sent. We'll reply within 24 hours.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ARCT<em>IQ</em></div>
+  <div class="footer-copy">© 2026 ArctIQ</div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-msg').style.display = 'block';
+  e.target.reset();
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(el => {
+    if (el.isIntersecting) {
+      el.target.style.opacity = '1';
+      el.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.card, .who-card, .process-item, .band-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(14px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    const targetId = this.getAttribute("href");
+
+    if (targetId === "#" || targetId.length < 2) return;
+
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    e.preventDefault();
+
+    const navHeight = document.querySelector("nav").offsetHeight;
+
+    const targetPosition =
+      target.getBoundingClientRect().top + window.scrollY - navHeight - 10;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth"
+    });
+  });
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>

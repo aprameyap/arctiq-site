@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ArctIQ — Blog</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<canvas id="circuit"></canvas>
+
+<nav>
+  <a class="logo" href="index.html">ARCT<em>IQ</em></a>
+  <div class="nav-right">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#who">Who We Help</a>
+    <a href="index.html#contact">Get in Touch</a>
+  </div>
+</nav>
+
+<div class="blog-page">
+  <div class="eyebrow">Technical Blog · Edge AI</div>
+  <h1>Blog</h1>
+
+  <p class="blog-intro">
+    Practical notes on edge AI — deployment, constraints, and what actually works in production.
+  </p>
+
+  <ul class="blog-list">
+    <li>
+      <a href="#">
+        <span class="blog-title">Running YOLOv8 on Jetson Nano — what works, what doesn't</span>
+        <span class="blog-meta">Apr 2026</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<footer>
+  <div class="footer-logo">ARCARCT<em>IQ</em></div>
+  <div class="footer-copy">© 2026 ArctIQ</div>
+</footer>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    const targetId = this.getAttribute("href");
+
+    if (targetId === "#" || targetId.length < 2) return;
+
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    e.preventDefault();
+
+    const navHeight = document.querySelector("nav").offsetHeight;
+
+    const targetPosition =
+      target.getBoundingClientRect().top + window.scrollY - navHeight - 10;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth"
+    });
+  });
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>
