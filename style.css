@@ -18,7 +18,6 @@
   --sans: 'Inter', sans-serif;
   --display: 'Michroma', sans-serif;
 }
-}
 
 html { scroll-behavior: smooth; }
 
@@ -29,6 +28,32 @@ body {
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+}
+h1, h2, h3 {
+  font-family: 'Michroma', sans-serif;
+  letter-spacing: 0.02em;
+  color: #e6edf3;
+}
+.blog-page h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.05;
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+}
+.blog-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 120px 20px;
+}
+.blog-page h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  font-size: 28px;
 }
 
 #circuit {
@@ -45,6 +70,22 @@ body::before {
     rgba(0,20,40,0.35) 0%,
     rgba(3,6,10,0.7) 70%
   );
+}
+pre {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-family: 'DM Sans', monospace;
+  font-size: 14px;
+  overflow-x: auto;
+}
+.blog-page img {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 24px 0;
+  border-radius: 10px;
 }
 
 /* Everything above overlay */

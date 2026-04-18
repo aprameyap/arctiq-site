@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real-Time Anomaly Detection on Jetson using 1D CNN Autoencoder and Statistical Process Control</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<canvas id="circuit"></canvas>
+
+<nav>
+  <a class="logo" href="index.html">ARC<em>T</em>IQ</a>
+  <div class="nav-right">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#who">Who We Help</a>
+    <a href="blog.html">Writing</a>
+    <a href="index.html#contact">Get in Touch</a>
+  </div>
+</nav>
+
+<div class="blog-page">
+
+  <div class="eyebrow">Edge AI · TensorRT · Nvidia Jetson</div>
+
+  <h1>Real-Time Anomaly Detection on Jetson using 1D CNN Autoencoder and Statistical Process Control</h1>
+
+  <p class="blog-intro">
+    This project explores real-time anomaly detection for vibration signals using a 1D convolutional autoencoder deployed on NVIDIA Jetson. The system processes time-series data, produces a reconstruction-based anomaly signal, and applies statistical control methods to improve reliability.
+  </p>
+
+  <h2>System Overview</h2>
+
+  <p>
+    The pipeline operates on fixed-length windows of vibration data:
+  </p>
+
+  <pre>
+Sensor → Windowing → Autoencoder → Reconstruction Error → SPC → Anomaly
+  </pre>
+
+  <p>
+    Each window contains 1024 samples. The autoencoder reconstructs the signal, and the reconstruction error is used as a proxy for abnormal behavior.
+  </p>
+
+  <h2>Model and Deployment</h2>
+
+  <p>
+    The model is a lightweight 1D CNN autoencoder trained on normal operating data from the IMS bearing dataset. After training, it was exported to ONNX and compiled using TensorRT for deployment on Jetson.
+  </p>
+
+  <p>
+    Measured performance on device (NVIDIA Jetson Orin Nano):
+  </p>
+
+  <ul>
+    <li>Average latency: ~0.3 ms per window</li>
+    <li>Throughput: several thousand inferences per second</li>
+  </ul>
+
+  <p>
+    This allows continuous monitoring without relying on cloud inference.
+  </p>
+
+  <h2>Reconstruction Error as a Signal</h2>
+
+  <p>
+    Instead of analyzing the raw vibration signal directly, the system evaluates reconstruction error. This compresses the input into a more stable signal that reflects deviations from learned normal behavior.
+  </p>
+
+  <p>
+    The error distribution shows a consistent baseline with intermittent spikes:
+  </p>
+
+  <img src="errors_spc.png" style="width:100%; border-radius:12px; margin:20px 0;">
+
+  <p>
+    These spikes correspond to segments where the model struggles to reconstruct the signal accurately.
+  </p>
+
+  <h2>Statistical Process Control</h2>
+
+  <p>
+    Raw reconstruction error is still noisy. To improve robustness, statistical process control techniques are applied:
+  </p>
+
+  <ul>
+    <li>Shewhart control chart for large deviations</li>
+    <li>CUSUM for cumulative drift</li>
+    <li>Persistence filtering to remove isolated spikes</li>
+  </ul>
+
+  <p>
+    The final detection logic combines these signals and retains only sustained anomalies over a short window.
+  </p>
+
+  <h2>Observations</h2>
+
+  <ul>
+    <li>The reconstruction error remains stable across most of the signal</li>
+    <li>Anomalies appear as short clusters rather than long continuous regions</li>
+    <li>Statistical filtering reduces false positives significantly</li>
+  </ul>
+
+  <p>
+    The system captures irregular behavior while maintaining a low rate of spurious detections.
+  </p>
+
+  <h2>Discussion</h2>
+
+  <p>
+    Applying control charts directly to vibration amplitude is sensitive to noise and variance. Using reconstruction error as an intermediate signal produces a more controlled input for statistical methods.
+  </p>
+
+  <p>
+    The autoencoder learns structural patterns in the signal, including frequency and temporal dependencies. The control charts operate on this derived signal, which improves consistency.
+  </p>
+
+  <h2>Limitations</h2>
+
+  <ul>
+    <li>Separation between normal and anomalous error is moderate</li>
+    <li>Anomalies are localized and may not represent full degradation cycles</li>
+    <li>No classification of fault type</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+
+  <p>
+    This implementation demonstrates a practical approach to edge-based anomaly detection. The combination of learned representations and statistical control provides a reliable signal while maintaining low latency on embedded hardware.
+  </p>
+
+</div>
+
+<footer>
+  <div class="footer-logo">ARC<em>T</em>IQ</div>
+  <div class="footer-copy">© 2026 Arctiq</div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
