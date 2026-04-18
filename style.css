@@ -23,32 +23,16 @@ html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
+  color: rgba(255,255,255,0.8);
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
-}
-body {
-  font-family: 'DM Sans', sans-serif;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.8);
 }
 h1, h2, h3 {
   font-family: 'Michroma', sans-serif;
   letter-spacing: 0.02em;
   color: #e6edf3;
-}
-.blog-page h1 {
-  font-size: clamp(42px, 6vw, 72px);
-  line-height: 1.05;
-  max-width: 800px;
-  margin-bottom: 1.5rem;
-}
-.blog-page {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 120px 20px;
 }
 .blog-page h2 {
   margin-top: 3.5rem;
