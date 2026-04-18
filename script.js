@@ -39,7 +39,7 @@ function buildPaths() {
       x2: (startC + len) * GRID,
       y2: y,
       t: -Math.random(), // directional flow
-      speed: 0.015 + Math.random() * 0.006,
+      speed: 0.009 + Math.random() * 0.006,
       green: Math.random() > 0.45,
       bright: 0.06 + Math.random() * 0.08
     });
@@ -59,7 +59,7 @@ function buildPaths() {
       x2: x,
       y2: (startR + len) * GRID,
       t: -Math.random(),
-      speed: 0.015 + Math.random() * 0.006,
+      speed: 0.009 + Math.random() * 0.006,
       green: Math.random() > 0.45,
       bright: 0.06 + Math.random() * 0.08
     });
