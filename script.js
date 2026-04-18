@@ -106,7 +106,7 @@ function draw() {
     ctx.stroke();
 
     // Move signal
-    p.t += p.speed;
+    p.t += p.speed * 0.6;
     if (p.t > 1.2) p.t = -0.1;
 
     const dx = p.x2 - p.x1;
