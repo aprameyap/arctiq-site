@@ -221,34 +221,59 @@
     </div>
 
     <div class="contact-right">
-      <form class="form" onsubmit="handleSubmit(event)">
+      <form class="form" action="https://formspree.io/f/xvzdrdzq" method="POST">
+
+        <!-- Optional: prevent spam bots -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <!-- Optional: email subject -->
+        <input type="hidden" name="_subject" value="New inbound lead — ArctIQ">
+
+        <!-- Optional: redirect after submit -->
+        <input type="hidden" name="_next" value="#contact">
+
         <div class="form-field">
           <label>Your name</label>
-          <input type="text" placeholder="Name" required>
+          <input type="text" name="name" placeholder="Name" required>
         </div>
+
         <div class="form-field">
           <label>Organisation</label>
-          <input type="text" placeholder="Organisation Name">
+          <input type="text" name="organisation" placeholder="Organisation Name">
         </div>
+
         <div class="form-field">
           <label>I am a...</label>
-          <select>
+          <select name="context">
             <option value="">Select your context</option>
-            <option>Manufacturer / Factory</option>
-            <option>University / Research Lab</option>
-            <option>Hardware Startup</option>
-            <option>Surveillance / Security Company</option>
-            <option>Other</option>
+            <option value="Manufacturer / Factory">Manufacturer / Factory</option>
+            <option value="University / Research Lab">University / Research Lab</option>
+            <option value="Hardware Startup">Hardware Startup</option>
+            <option value="Surveillance / Security Company">Surveillance / Security Company</option>
+            <option value="Other">Other</option>
           </select>
         </div>
+
         <div class="form-field">
           <label>What are you trying to build?</label>
-          <textarea placeholder="Describe your use case. What problem you're solving, what hardware you have, and where you are in the process."></textarea>
+          <textarea 
+            name="message"
+            placeholder="Describe your use case. What problem you're solving, what hardware you have, and where you are in the process."
+            required
+          ></textarea>
         </div>
+
+        <!-- (Optional but VERY useful) -->
+        <div class="form-field">
+          <label>Your email</label>
+          <input type="email" name="email" placeholder="you@company.com" required>
+        </div>
+
         <button type="submit" class="btn-fill">Send message →</button>
-        <div id="form-msg" style="font-family:var(--mono);font-size:0.73rem;color:var(--green);display:none;letter-spacing:0.05em;">
-          Message sent. We'll reply within 24 hours.
+        <div id="form-msg" style="display:none; margin-top:12px; color:green;">
+          Thanks for reaching out! We'll get back to you within 1-2 business days.
         </div>
+
       </form>
     </div>
   </div>
